@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {
-  Form,
   Row,
   Col,
 } from 'antd';
@@ -8,9 +7,16 @@ import CardParamsForm from '@/pages/Card/CardParamsForm';
 import CardPreview from '@/pages/Card/CardPreview';
 import styles from './index.less';
 
-const {Item: FormItem} = Form;
+interface GeneratorProps {
+}
+interface GeneratorState {
+  params: object,
+}
+export default class Generator extends Component<GeneratorProps, GeneratorState> {
+  state = {
+    params: {},
+  }
 
-export default class Generator extends Component {
   render () {
     return (
       <div className={styles.wrapper}>
