@@ -1,6 +1,90 @@
-.wrapper {
-}
+@import './mana.less';
 
-.lightYellow {
-  color: #fdffdf;
+.previewBox {
+  margin: 0 auto;
+  width: 360px;
+  height: 520px;
+  border: 4px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  background: #f4e8bb;
+  color: #000;
+
+  .header {
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 0 6px;
+    width: 320px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: #d4bb7b;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+
+    p {
+      margin: 0;
+      line-height: 26px;
+      text-align: left;
+    }
+    .extra {
+      position: absolute;
+      top: 0;
+      right: 6px;
+      height: 30px;
+      line-height: 30px;
+      max-width: 308px;
+
+      i {
+        margin: 0 1px;
+        display: inline-block;
+        position: relative;
+        left: 0;
+        background-image: url(../../assets/spritesheet.png);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .imgBox {
+    width: 310px;
+    height: 230px;
+    margin: 0 auto;
+    margin-top: 5px;
+    border: 2px solid #000;
+    background: #FFF;
+  }
+  .typeBox {
+    margin: 2px auto;
+    padding: 0 6px;
+    width: 320px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: #d4bb7b;
+    overflow: hidden;
+    white-space: nowrap;
+
+    p {
+      margin: 0;
+      line-height: 26px;
+      text-align: left;
+    }
+  }
+  .descBox {
+    width: 310px;
+    height: 160px;
+    margin: 0 auto;
+    padding: 4px;
+    background: #FFF;
+    border: 2px solid #8b815f;
+    text-align: left;
+    color: #000;
+    overflow: hidden;
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
 }

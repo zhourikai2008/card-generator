@@ -1,27 +1,49 @@
 import React, {Component} from 'react';
 import {
-  Form,
-  Row,
-  Col,
 } from 'antd';
+import {CardParams} from '@/pages/Card/CardParamsForm';
 import styles from './CardPreview.less';
 
-const {Item: FormItem} = Form;
+export interface CardPreviewProps {
+  data: CardParams,
+}
 
-const CardParamsForm: React.FC<{form: object}> = props => {
+const CardPreview: React.FC<CardPreviewProps> = props => {
   const {
-    form,
+    data,
   } = props;
 
-  const layout = {
-    labelCol: { span: 5 },
-    wrapperCol: { span: 15 },
-  };
   return (
-    <>
-    </>
-  );
+    <div className={styles.previewBox}>
+      <div className={styles.header}>
+        <p>{data.title}</p>
+
+        <div className={styles.extra}>
+          {data.mana && data.mana.split('{').map(item => {
+            const indexEnd = item.indexOf('}');
+            if (indexEnd === -1) {
+              return null;
+            }
+
+            const mana = item.substring(0, indexEnd);
+            return (
+              <i className={styles[`sprite-${mana}`]} />
+            )
+          })}
+        </div>
+      </div>
+
+      <div className={styles.imgBox}></div>
+
+      <div className={styles.typeBox}>
+        <p>{data.type}{data.subtype ? ` - ${data.subtype}` : null}</p>
+      </div>
+
+      <div className={styles.descBox}>
+        <pre>{data.description}</pre>
+      </div>
+    </div>
+  )
 };
 
-const WrappedCardParamsForm = Form.create()(CardParamsForm);
-export default WrappedCardParamsForm;
+export default CardPreview;

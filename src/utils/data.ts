@@ -1,19 +1,19 @@
 const CARD = {
   type: [
     {
-      key: 'creature',
+      key: 'Creature',
       value: '生物',
     },
     {
-      key: 'spell',
+      key: 'Spell',
       value: '法术',
     },
     {
-      key: 'event',
+      key: 'Event',
       value: '事件',
     },
     {
-      key: 'tactics',
+      key: 'Tactics',
       value: '战术',
     },
   ],

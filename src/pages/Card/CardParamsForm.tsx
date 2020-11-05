@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   Form,
   Row,
@@ -15,7 +15,22 @@ const {Item: FormItem} = Form;
 const {Option} = Select;
 const { TextArea } = Input;
 
-const CardParamsForm: React.FC<{form: WrappedFormUtils}> = props => {
+export interface CardParams {
+  id: string,
+  title: string,
+  type: string,
+  subtype: string,
+  strength?: number,
+  mana: string,
+  description: string,
+}
+
+export interface CardParamsFormProps {
+  form: WrappedFormUtils,
+  handleFormChange: (fieldValues: CardParams) => void,
+}
+
+const CardParamsForm: React.FC<CardParamsFormProps> = props => {
   const {
     form,
   } = props;
@@ -75,7 +90,7 @@ const CardParamsForm: React.FC<{form: WrappedFormUtils}> = props => {
         </FormItem>
       </Col>
 
-      {form.getFieldValue('type') === 'biology' ? (
+      {form.getFieldValue('type') === CARD.type[0].key ? (
         <Col span={12}>
           <FormItem {...layout} label={labelDom('强度')}>
             {form.getFieldDecorator('strength', {
@@ -143,8 +158,9 @@ const CardParamsForm: React.FC<{form: WrappedFormUtils}> = props => {
 };
 
 const WrappedCardParamsForm = Form.create({
-  onValuesChange: (props, changedValues, allValues) => {
-
+  onValuesChange: (props: CardParamsFormProps, changedValues, allValues) => {
+    props.handleFormChange(allValues);
   }
 })(CardParamsForm);
+
 export default WrappedCardParamsForm;
