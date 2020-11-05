@@ -12,10 +12,10 @@
 
   .header {
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 0 6px;
     width: 320px;
-    height: 30px;
+    height: 40px;
     border: 2px solid #000;
     border-radius: 10px;
     background: #d4bb7b;
@@ -25,15 +25,17 @@
 
     p {
       margin: 0;
-      line-height: 26px;
+      line-height: 36px;
       text-align: left;
+      font-size: 20px;
+      font-weight: bold;
     }
     .extra {
       position: absolute;
       top: 0;
       right: 6px;
-      height: 30px;
-      line-height: 30px;
+      height: 40px;
+      line-height: 40px;
       max-width: 308px;
 
       i {
@@ -53,6 +55,23 @@
     margin-top: 5px;
     border: 2px solid #000;
     background: #FFF;
+    overflow: hidden;
+
+    img {
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .btnBox {
+      width: 100%;
+      height: 100%;
+      background: #a4a4a4;
+      color: #FFF;
+      font-size: 20px;
+      line-height: 226px;
+      cursor: pointer;
+    }
   }
   .typeBox {
     margin: 2px auto;
@@ -69,6 +88,8 @@
       margin: 0;
       line-height: 26px;
       text-align: left;
+      font-size: 16px;
+      font-weight: bold;
     }
   }
   .descBox {
@@ -83,8 +104,27 @@
     overflow: hidden;
 
     pre {
+      margin: 0;
       white-space: pre-wrap;
       word-wrap: break-word;
+      line-height: 18px;
+    }
+  }
+  .strengthBox {
+    width: 310px;
+    margin: 0 auto;
+    position: relative;
+
+    div {
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      padding: 5px 10px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      background: #d4bb7b;
+      font-size: 20px;
+      font-weight: bold;
     }
   }
 }

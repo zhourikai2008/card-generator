@@ -100,6 +100,7 @@ const CardParamsForm: React.FC<CardParamsFormProps> = props => {
             })(
               <InputNumber
                 min={0}
+                precision={0}
                 style={{ width: 150 }}
               />
             )}
@@ -116,7 +117,6 @@ const CardParamsForm: React.FC<CardParamsFormProps> = props => {
               initialValue: '',
               rules: [
                 {required: true, message: '请输入费用！'},
-                {max: 30},
               ],
             })(
               <Input/>
