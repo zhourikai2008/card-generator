@@ -16,7 +16,6 @@ const {Option} = Select;
 const { TextArea } = Input;
 
 export interface CardParams {
-  id: string,
   title: string,
   type: string,
   subtype: string,
