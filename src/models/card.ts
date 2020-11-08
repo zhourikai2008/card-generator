@@ -1,4 +1,7 @@
 import { Model } from 'dva';
+import {
+  add
+} from '@/services/card';
 
 const CardModel: Model =  {
   namespace: 'card',
@@ -7,16 +10,13 @@ const CardModel: Model =  {
   },
 
   effects: {
-    * add({payload, callback}, {select, call}) {
+    * add({payload, callback}, {call}) {
+      const response = yield call(add, payload);
+      if (callback) callback(response);
     },
   },
 
   reducers: {
-    saveCurrentUser(state, action) {
-      return {
-        ...state,
-      };
-    },
   },
 };
 

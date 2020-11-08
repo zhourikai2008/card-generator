@@ -43,9 +43,19 @@ const config: IConfig =  {
   },
   proxy: {
     '/api': {
-      target: 'http://192.168.30.76:5060/',
+      target: 'http://localhost:8080/',
       changeOrigin: true,
       pathRewrite: { '^/api': '/api' },
+    },
+    '/file': {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+      pathRewrite: { '^/file': '/file' },
+    },
+    '/image': {
+      target: 'http://localhost:8080/',
+      changeOrigin: true,
+      pathRewrite: { '^/image': '/image' },
     },
   },
   manifest: {
