@@ -1,6 +1,6 @@
 import { Model } from 'dva';
 import {
-  add
+  add, get
 } from '@/services/card';
 
 const CardModel: Model =  {
@@ -12,6 +12,11 @@ const CardModel: Model =  {
   effects: {
     * add({payload, callback}, {call}) {
       const response = yield call(add, payload);
+      if (callback) callback(response);
+    },
+
+    * get({payload, callback}, {call}) {
+      const response = yield call(get, payload);
       if (callback) callback(response);
     },
   },

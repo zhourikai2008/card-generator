@@ -12,7 +12,6 @@ import { ConnectState } from '@/models/connect';
 import CardParamsForm, {CardParams} from '@/pages/Card/CardParamsForm';
 import CardPreview from '@/pages/Card/CardPreview';
 import Result from '@/utils/Result';
-// import { download } from '@/utils/download';
 import styles from './Index.less';
 
 export interface GeneratorProps {
@@ -53,11 +52,12 @@ class Generator extends Component<GeneratorProps, GeneratorState> {
     this.setState({
       loading: true,
     });
+    message.info('正在生成中......');
     html2canvas(document.getElementById('card_preview') as HTMLElement).then((canvas: HTMLCanvasElement) => {
       dispatch({
         type: 'card/add',
         payload: {
-          ...params,
+          params,
           base64: canvas.toDataURL('image/png'),
         },
         callback: (res: Result) => {
@@ -77,7 +77,6 @@ class Generator extends Component<GeneratorProps, GeneratorState> {
           });
         },
       })
-      // download(canvas.toDataURL('image/png'), 'test.png', 'image/png');
     });
   };
 

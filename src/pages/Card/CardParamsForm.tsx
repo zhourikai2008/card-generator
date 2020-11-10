@@ -19,7 +19,7 @@ const { TextArea } = Input;
 export interface CardParams {
   title: string,
   type: string,
-  subtype: string,
+  subtype?: string,
   strength?: number,
   mana: string,
   description: string,
