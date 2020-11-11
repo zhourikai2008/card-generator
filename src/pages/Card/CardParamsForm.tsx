@@ -142,13 +142,13 @@ const CardParamsForm: React.FC<CardParamsFormProps> = props => {
 
           <Col span={12}>
             <div className={styles.manaBox}>
-              {CARD.mana.map((item: number) => (
+              {CARD.mana.map((item: any) => (
                 <a
-                  key={item}
+                  key={item.key}
                   href="#"
-                  onClick={event => onManaClick(event, item)}
+                  onClick={event => onManaClick(event, item.key)}
                 >
-                  <i className={styles[`sprite-${item}`]} />
+                  <i className={styles[`sprite-${item.class}`]} />
                 </a>
               ))}
             </div>

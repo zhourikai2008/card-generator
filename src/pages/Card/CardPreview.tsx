@@ -3,9 +3,10 @@ import {
   Upload,
   message,
 } from 'antd';
+import { RcFile } from 'antd/lib/upload/interface';
 import CropModal from '@/pages/Card/CropModal';
 import {CardParams} from '@/pages/Card/CardParamsForm';
-import { RcFile } from 'antd/lib/upload/interface';
+import {CARD} from '@/utils/data';
 import styles from './CardPreview.less';
 
 export interface CardPreviewProps {
@@ -57,7 +58,7 @@ const CardPreview: React.FC<CardPreviewProps> = props => {
 
               const mana = item.substring(0, indexEnd);
               return (
-                <i className={styles[`sprite-${mana}`]} />
+                <i className={styles[`sprite-${CARD.mana[CARD.mana.map(item => item.key).indexOf(mana)].class}`]} />
               )
             })}
           </div>
