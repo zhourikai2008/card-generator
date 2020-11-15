@@ -53,7 +53,7 @@ class Generator extends Component<GeneratorProps, GeneratorState> {
       loading: true,
     });
     message.info('正在生成中......');
-    html2canvas(document.getElementById('card_preview') as HTMLElement).then((canvas: HTMLCanvasElement) => {
+    html2canvas(document.getElementById('card_preview') as HTMLElement, {backgroundColor: null}).then((canvas: HTMLCanvasElement) => {
       dispatch({
         type: 'card/add',
         payload: {

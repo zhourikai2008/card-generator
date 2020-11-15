@@ -5,7 +5,7 @@ import {
   Spin,
   message,
   Button,
-  Form, Input,
+  Form,
 } from 'antd';
 import { connect, Dispatch } from 'dva';
 import router from 'umi/router';
